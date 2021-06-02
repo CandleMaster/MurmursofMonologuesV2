@@ -6,7 +6,8 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [`gatsby-plugin-sass`,
+  plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -34,16 +35,5 @@ module.exports = {
       path: `${__dirname}/src/blogs/`,
     },
   },
-    {
-          resolve: `gatsby-plugin-sass`,
-          options: {
-           cssLoaderOptions: {
-            esModule: false,
-             modules: {
-               namedExport: false,
-             },
-           },
-         },
-        }
       ],
 }
