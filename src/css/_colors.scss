@@ -1,0 +1,17 @@
+$background1:#F0EDE2;
+$redfont:#DB1111;
+$mailingList:#B4B0B0;
+$darkgrey:#535050;
+$fontbeige:#dfdac8;
+$darkbeige:#CDC5A7;
+
+@keyframes glitch{
+    0%{text-shadow: 0.05em 0 0 rgba(255, 255, 255, 0.75), -0.05em -0.025em 0 $redfont, -0.025em 0.05em 0 black;}
+    14%{text-shadow: 0.05em 0 0 rgba(255, 255, 255, 0.75), -0.05em -0.025em 0 $redfont, -0.025em 0.05em 0 black;}
+    15%{text-shadow: -0.05em -0.025em 0 rgba(255, 255, 255, 0.75), 0.025em 0.05em 0 $redfont, 0.025em 0.05em 0 black;}
+    49%{text-shadow: -0.05em -0.025em 0 rgba(255, 255, 255, 0.75), 0.025em 0.05em 0 $redfont, 0.025em 0.05em 0 black;}
+    50%{text-shadow: 0.025em 0.05em 0 rgba(255, 255, 255, 0.75), 0.05em 0em 0 $redfont, 0.0em -0.05em 0 black;}
+    99%{text-shadow: 0.025em 0.05em 0 rgba(255, 255, 255, 0.75), 0.05em 0em 0 $redfont, 0.0em -0.05em 0 black;}
+    100%{text-shadow: -0.025em 0 0 rgba(255, 255, 255, 0.75), -0.025em -0.025em 0 $redfont, -0.025em -0.05em 0 black;}
+
+}

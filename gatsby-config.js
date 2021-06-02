@@ -6,5 +6,44 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [`gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Roboto`
+        ],
+        display: 'swap'
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [],
+      },
+    },
+    {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `blogs`,
+      path: `${__dirname}/src/blogs/`,
+    },
+  },
+    {
+          resolve: `gatsby-plugin-sass`,
+          options: {
+           cssLoaderOptions: {
+            esModule: false,
+             modules: {
+               namedExport: false,
+             },
+           },
+         },
+        }
+      ],
 }

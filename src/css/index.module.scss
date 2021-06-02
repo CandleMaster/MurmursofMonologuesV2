@@ -1,0 +1,164 @@
+@import'./colors';
+
+body{
+    background-color: $background1;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+    // cursor:none;
+}
+
+
+.bottomWrap{
+    overflow: hidden;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-content:right ;
+    border: 1px black solid;
+    height:50vh;
+    text-align: right;
+}
+
+
+@mixin backdrop {
+    position: absolute;
+    min-height: 60vh;
+    width: 70vw;
+    background: url("../../public/Img/pexels-innermost-limits-3894157.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center; 
+}
+
+.overlay1{
+    @include backdrop();
+    width: 90vw;
+    left: 0;
+    bottom: 0;
+    mix-blend-mode: lighten;
+    z-index: -1;
+}
+
+.about{
+    @include backdrop();
+    right: 5%;
+    top: 28vh;
+    z-index: 1;
+}
+
+.aboutButton{
+        position: absolute;
+        top: 50%;
+        right: 57%;
+        padding: 3rem;        
+        max-width: 8rem;
+        border: none;       
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 1.25rem;
+        opacity: 0;
+        z-index: 3;
+        transition: all .12s ease;
+        background-color: rgba(255, 255, 255, 0);
+        a{
+            color:$redfont;
+        }
+    }
+ .aboutButton:hover{
+        opacity: 1;
+}
+
+@mixin bird ($top, $right, $width,$maxwidth, $opacity){
+    position: absolute;
+    top:$top;
+    right: $right;
+    width: $width;
+    max-width: $maxwidth;
+    opacity: $opacity;
+}
+
+#flyLeft{
+    @include bird(70%,65%,10vw,6.5rem,33%)
+}
+
+#flyRight{
+    @include bird(8%,30%,15vw,8rem,28%)
+}
+
+/*Cursor related*/
+@mixin cursorBasic {
+    background:#ffffff;
+    border-radius:50%;
+    position:absolute;
+    transform:translate(-50%, -50%);
+    pointer-events: none;
+    transition:all .3s ease-in;
+    transition-property: background,width,height,opacity ;
+    transform-origin: 100% 100%;
+    opacity: 40%;
+}
+.cursor{
+    @include cursorBasic();
+    width:5rem;
+    height:5rem;
+    z-index: 2;
+}
+
+.cursor-Dark{
+    @include cursorBasic();
+    animation: cursorGrow 5s ease-in-out infinite;
+    z-index: 6;
+}
+
+.cursor-After{
+    background-color: rgb(219, 219, 219) !important;
+    opacity: 50%;
+    height: 3rem;
+    width: 3rem;
+    z-index: 2;
+    transition:scale 5s ease-in;
+    transition-property: background,scale,opacity ;
+}
+
+
+.look{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.35rem;
+    color: $mailingList;
+    position: absolute;
+    right: 13%;
+    width:100vw;
+    border: 1px black solid;
+    bottom: 7%;
+    transition:all 2s ease;
+}
+
+.dive{
+        animation: divehover 2.2s cubic-bezier(0.43,-0.76, 0.69, 1.12) infinite;
+        padding-left: .5rem;
+        font-size: 1.2rem;
+        position: absolute;
+}
+
+@keyframes divehover{
+    0%{transform:translateY(-9%);}
+    50%{transform:translateY(10%);}
+    100%{transform:translateY(-9%);}
+}
+.createdBy{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    color: $mailingList ;
+    font-size: .85em;
+    letter-spacing: .1rem;
+    position: absolute;
+    justify-items: stretch;
+    right:1.5%;
+    font-family: 'Roboto', sans-serif;
+    margin-top:-10.5%;
+    height: 25rem;
+    display: block;
+    align-self: baseline;
+}
