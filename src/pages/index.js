@@ -1,20 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Heading from "../components/Heading"
+import Ocean from '../components/Ocean'
+import Seo from '../components/SEO'
 import * as styles from "../css/index.module.scss"
-import Momtitle from "../../public/Img/Momtitle.png"
+import "../css/global.scss"
+import { Link } from 'gatsby';
+import Cursor from "../components/Cursor"
+import * as cursorStyles from '../css/cursor.module.scss'
 
 export default function Home() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const setFromEvent = (e) => setPosition({ x: e.clientX, y: e.clientY });
+    window.addEventListener("mousemove", setFromEvent);
+  }, []);
+
+const [mouseEffects, setMouseEffects] = useState(false)
+function handleMouseEffect(){
+  setMouseEffects(true)
+}
+function handleMouseEffectOut(){
+  setMouseEffects(false)
+}
   return (    
-    <div>   
-    <Heading ImgSrc={Momtitle} />
-    <div className={styles.cursor}></div>  
-    <div className={styles.bottomWrap}>
-      <div className={styles.about}>
-          <img className={styles.bird} id={styles.flyLeft} data-speed='10' src="./Img/flyLeft.png" alt="bird1" />
-          <img className={styles.bird} id={styles.flyRight} data-speed='-14' src="./Img/flyRight.png" alt="bird2" />
-      </div>
-      <div className={styles.look}>A Blog. Take a <span className={styles.dive}>dive.</span></div>         
-      <div className={styles.createdBy}>Created By Danni Jiang</div>   
-    </div>
+    <div className={styles.indexBody}>   
+        <Seo 
+            title="home page"
+            description="A blog on whatever I fancy, occasionally culture, technology, books, algorithms, Shanghai etc. "
+            />
+      <Cursor 
+        cursorClass={mouseEffects? cursorStyles.cursor2 : cursorStyles.cursor1} 
+        xPosition={position.x} 
+        yPosition={position.y} 
+      />
+      <Heading 
+        isBeigeHead={true} 
+        ImgSrc="Img/Momtitle.png" 
+        onPageAboutHead={{color:'#B4B0B0'}}
+      >
+        <div className={styles.overlay1} style={{zIndex:-3}}/>
+        <div className={styles.overlay2} style={{zIndex:-3}}/>
+        <Link to="/about" className={styles.aboutButton} onMouseOver={handleMouseEffect} onMouseOut={handleMouseEffectOut}>About</Link>
+        <div className={styles.bottomWrap}>
+          <Ocean xPosition={position.x} yPosition={position.y}/>
+          <div className={styles.createdBy}>Created By Danni Jiang</div>   
+          <div className={styles.look}>A Blog. Take a <span className={styles.dive}>dive.</span></div> 
+        </div>
+      </Heading>
     </div> 
 )}
+

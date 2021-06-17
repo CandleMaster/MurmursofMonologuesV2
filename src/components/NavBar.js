@@ -1,16 +1,35 @@
 import React from 'react';
-import "../css/global.scss"
+import NavLi from "./NavLi"
+import { useState } from 'react'
+import { Link } from 'gatsby';
+import lodash from 'lodash'
+export default function NavBar(prop) {
 
-export default function NavBar() {
+    const essaySeries = ["SHITS AND GIGGLES","SHANGHAI SHENANEGANS","BOOK REVIEW"]
+    
+    const [isMouseOver,setMouseOver] = useState(false)
+    function handleMouseOver(){
+        setMouseOver(true)
+        }
+    function handleMouseOut(){
+        setMouseOver(false)
+        }
+
     return (
-        <nav className="nav-bar">   
-            <ul className="expand">LATEST</ul>
-            <ul className="expand">POEMS</ul>
-            <ul className="expand"> ESSAY SERIES
-                <li>SHITTS & GIGGLES</li>
-                <li>SHANGHAI SHENANEGANS</li>
-                <li>BOOK REVIEW</li>
-            </ul>
+        <nav className={prop.isBeige ? "navBeige" : "navWhite"} style={prop.navStyle}>   
+            <ul><Link to="/latest" style={prop.onPageLatest} >LATEST</Link></ul>
+            <ul><Link to="/" style={prop.onPageAbout} >ABOUT</Link></ul>
+            <ul><Link to="/poem" style={prop.onPagePoem}>POEMS</Link></ul>
+            <ul onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}> <Link to="/latest" style={prop.onPageEssay}>ESSAY
+            SERIES
+                {essaySeries.map((sery,index) => <NavLi 
+                    mouseOver={isMouseOver} 
+                    item={sery} 
+                    tags={lodash.kebabCase(sery.replace('&','AND'))}
+                    setStyle={{transitionDelay:String(index*0.1)+'s'}}
+                    />)}
+            </Link></ul>
         </nav>
     )
 }
+

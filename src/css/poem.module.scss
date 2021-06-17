@@ -1,0 +1,124 @@
+@import'./colors';
+.body{
+    background-color:white;
+    cursor:default;
+
+}
+
+
+.vertical{
+    position: fixed;
+    left: 0rem;
+    height: 100vh;
+    width: 2.4rem;
+    background-color: $background1;
+    z-index:5
+}
+
+.container{
+    z-index:-1;
+    background-color:white;
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom:3rem;
+}
+.bottom{
+    position: relative;
+    width: 90vw;
+    font-family: 'Roboto', sans-serif;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-items: stretch;
+    margin: 0 7% 0 7%; 
+}
+
+@mixin poemTemplate {
+    background-position: center;
+    background-size: cover;
+    justify-self: center;
+    padding: 3.5rem;
+    max-width: 37rem;
+    flex: 1 1 28rem;
+    p{
+        white-space: pre-line;
+        padding: .75rem;
+        line-height:1.2rem;
+    }
+    h2{
+        padding: .75rem;
+    }
+}
+
+#poem1{
+    @include poemTemplate;
+    background-image: url('/Img/shape1.png') ;
+    align-self: flex-start;
+    justify-self: center;
+}
+
+.poemWrap{
+    flex: 1 1 28rem;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+#poem2{
+    background-image: url('/Img/shape2.png') ;
+    @include poemTemplate;
+    padding: 4.5rem;
+}
+
+#rat{
+    img{
+        position:absolute;
+        height: 11rem;
+        z-index:-2;
+    }
+    margin-right: 12rem;
+    bottom:15%;
+    height: 20rem;
+    width: 20rem;        
+    z-index: 0;
+}
+
+.join{
+    padding-left: 1.5rem;
+}
+
+@media screen and (max-width:1000px){
+    .vertical{
+        display:none
+    }
+}
+
+@media screen and (max-width:500px){
+    .bottom{
+        width:100vw;
+        margin:0;
+    }
+    .vertical{
+        display:none
+    }
+
+    #poem1{
+        p, h2{
+            margin:0 -2rem;
+
+        }
+    }
+
+    .poemWrap{
+    align-items: flex-start;
+    }
+
+    #poem2{
+        padding:3rem;
+        margin-left:-2.5rem;
+
+    }
+}

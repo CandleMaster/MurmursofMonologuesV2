@@ -1,13 +1,13 @@
 ---
-title: Algorithm, Culture and Social Engineering
-tags: SHITS
+title: Algorithm, Culture and Social Engineer
+tags: SHITS AND GIGGLES
 description: Check out my courses and become more creative!
-slug: roasted-veggies-are-ok
+slug: roasted-veggies-are-fine
 date: 05.06.2021
 genre: essay
 ---
 
-If nature vs. nurture was the scientific inquiry of early 2000s, we are due replacing "nurture" with the Algorithm. Some 2am, eyes slightly blood-shot and fingers utterly paralysed, I wait patiently for the "watch next" circle to fill up. In my 4 months of winter nesting, Alphabet knew me in ways my friends never would, and has in return shaped me in inexplicable ways. Indeed, I have a niche knowledge of sport and spear fishing, having never touched a fishing pole in my life. As algorithms gradually canopy our environment, how much are they influencing our knowledge, values and identity? Looming with my personal anxiety are three rising social commentaries, and where they meet inspires my despair. The first social commentary is social media addiction as a design axiom of tech companies (ironically explored in a Netflix documentary "Social Dilemma"). With our eyeballs heavily capitalized, there is no turning back in increasing consumption. Second is information bias, gatekeeping, manipulation, censorship, de-platforming by information conglomerates. The more information we consume, the more bias we also absorb. The third narrative arises when AI is added to the equation in both previous stories, leading to a public anxiety. Whose responsibility is the advent of AI? Regulators, with lacking expertise, inventors themselves, or us consumers? At the intersection yet unknown, where will an addicted civilization, relinquished of its decision-making to AI, spiral down to? 
+YOOOOOOOO
 
 A history of institutional gatekeeping on culture and politics
  

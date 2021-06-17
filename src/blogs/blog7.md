@@ -1,6 +1,6 @@
 ---
 title: My master’s research project specifically
-tags: SHANGHAI SHENANEGANS
+tags: ESSAY SERIES | SHANGHAI SHENANEGANS
 description: Everything You Need To Know
 slug: roasted-veggies-are-sure
 date: 05.06.2021

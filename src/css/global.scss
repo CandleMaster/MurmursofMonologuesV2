@@ -4,43 +4,30 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-.heading{
-    padding:2rem 5% 1rem 3rem ;
-    display: flex;
-    justify-content: space-between;
-    transition: all .3s ease-in;
-}
-
-*{
     text-decoration: none;
     list-style: none;
 }
-#webprojects{
-    display: none;
+
+body{
+    overflow-x:hidden;
+    z-index:-1000;
 }
 
 /*heading layouts*/
-.horizontal{
+@mixin horizontal{
     position: absolute;
     width: 100%;
+    z-index: -1;
     background-color: white;
-    z-index: 1;
 }
 
-#topHorizontal{
+
+.topHorizontal{
+    @include horizontal
     top:1.5rem;
     height: 2.5rem;  
 }
 
-.heading{
-    padding:1rem 5% 1rem 3rem ;
-    display: flex;
-    justify-content: space-between;
-    transition: all .3s ease-in;
-    z-index: 10;
-}
 .logo{
  padding-right: 3.5rem;   
  z-index: 10;
@@ -51,11 +38,13 @@
     width: 100vw;    
     bottom:0%;
     top:0%;
-    background-image: url('../../public/Img/noise.svg');
+    background-image: url('/Img/noise.svg');
     background-size: cover;
     position: absolute;    
-    // animation: noise .25s infinite;
+    animation: noise .25s infinite;
+    // z-index:3;
 }
+
 
 @keyframes noise{
     from{transform: translateX(0px);}
@@ -63,51 +52,300 @@
     to{transform: translateX(25%)}
 }
 
+.heading{
+    padding:2rem 5% 1rem 3rem ;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+    transition: all .3s ease-in;
+}
 
 
-.nav-bar{
+ nav{
     display: flex;
     justify-content: flex-end;
     font-family: 'Roboto', sans-serif;
     flex-wrap: nowrap;
     overflow: hidden;
     z-index: 3;
-    ul{
+    ul a{
         font-size: 1.35rem;
         text-align: left;
         padding: 0 0 1rem 3rem;
-        font-weight: bold;
-        word-wrap: none;
-        color:$fontbeige;         
-        :visited{
-            transition: all .2s ease-out;
-        }
-        :hover{
-        color: $redfont;
-         }
-        li{
-            font-size: 1rem;
-            padding:0.35rem 1.75rem 0.35rem 2rem;
-            line-height: 1.125rem;
-            text-align: left;
-            background-color:rgba(255, 255, 255, 0.726);
-            font-weight: normal;
-            opacity: 0;
-            transform: translateX(100%);
-            transition: all .3s ease-in-out;
-            color: $fontbeige !important;
-            z-index: 3;
-            :hover{
-                color: $redfont !important;
-                transform: translateX(0%) !important;
-                 }
-        }
-        #shits{
-            margin-top: 2px;
-            padding-top: .85rem;
-        }
-        #review{
-            padding-bottom: .85rem;
-        }           
+        font-weight: 500;
+        word-wrap: none;      
+        transition: all .2s ease-out;   
+        height:2rem;
     }
+}
+
+.navBeige ul a {
+    color:$fontbeige;  
+        z-index: 10;
+}
+.navWhite ul a {
+    color:white;  
+}
+ul a:hover{
+    color: $redfont;
+}
+
+li{
+    font-size: 1rem !important;
+    padding:0.35rem 1.75rem 0.35rem 4rem;
+    line-height: 1.125rem;
+    text-align: left;
+    background-color:rgba(255, 255, 255, 0.726);
+    font-weight: normal;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all .2s ease-in-out;
+    color: $fontbeige !important;
+    z-index: 3;
+}
+
+.liActive{
+    transform: translateX(0%) !important;
+    opacity:1;
+}
+
+li:hover{
+        color:$redfont !important;
+}
+
+@mixin hamburgerBasics{
+    position: absolute;
+    top: 2.35rem;
+    right: 7.5%;
+    height: .7rem;
+    width: 3rem;
+    border-width: 2px 0 2px 0;
+    border-style:solid;
+    border-color: $darkbeige;
+    z-index: 5;
+    display: none;
+
+}
+/*Hamburger Menu*/
+.hamburger{
+    @include hamburgerBasics;
+}
+
+.hamburger:hover{
+    border-color: $redfont;
+}
+
+/*appended classes with hamburger toggle, beside cursor*/
+.horizontal-After{
+@include horizontal;
+    top:1.5rem;
+    height: 2.5rem;  
+    background-color: $background1 !important;
+    opacity: 1 !important;
+    z-index:2;
+}
+
+.hamburger-After{
+    @include hamburgerBasics;
+    border-color: white !important;
+    display:block;
+}
+
+.hamburger-After:hover{
+    border-width: 2px 0 2px 0;
+    border-color: $redfont !important;
+    z-index: 5;
+}
+
+.heading-After{
+    display: flex;
+    position: absolute;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100vw;
+    height: 100vh;
+    color:$darkbeige;
+    background-color: white !important;
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content:flex-start;
+        opacity:100% !important;
+        transform: translateY(0%);
+        ul{        
+            transform: translateY(0%);
+            border-top: solid $fontbeige 1px ;
+            font-size: 1.5rem;
+            padding: 0.65rem 3.5rem .65rem 3.5rem;
+            li{
+                background-color:rgba(255, 255, 255, 0);
+                opacity: 100% !important;
+                transform: translateX(0%) !important;
+            }
+        }
+            ul:last-child{
+            border-bottom: solid $fontbeige 1px ;
+
+            }
+    }
+}
+
+@keyframes appear{
+    from{opacity:0}
+
+    to{opacity:1}
+}
+
+/*mailing list form*/
+.error{
+    padding:.2rem .5rem 0 0;
+    color:$redfont
+
+}
+.join{
+    bottom: 1.5rem;    
+    padding-left:4rem;
+    width: 100vw;
+    display: flex;
+
+    font-family: 'Roboto', sans-serif;
+    align-content:center;
+    z-index: 3;
+}
+.mailingLabel{
+
+    font-size: .95em;
+    letter-spacing: .3rem;
+    color: $darkbeige ;
+    padding:.2rem .5rem 0 0;
+    
+ }
+
+#email{
+    border: solid $darkbeige 1px;
+    border-radius: 15px;
+    width:13rem;
+    height:1.15rem;
+    margin-top:.2rem;
+    flex:0 1 13rem;
+}
+
+#submitEmail{
+    color: $darkbeige;
+    font-size: 1.1rem;
+    padding:.15rem 0 0 .3rem;
+    border:none;
+    background-color: white;
+    z-index:4;
+    flex:0 1 2.5rem;
+    align-self:flex-start;
+        :hover{
+            background-color:red;
+            cursor:move !important;
+        }
+}
+ 
+.bottomHorizontal{
+    @include horizontal;
+    bottom: .5rem;
+    height: 1.5rem;  
+    z-index:3;
+}
+
+
+.murmurs, .of, .monologues{
+    position:absolute;
+    color:black;
+    font-family: 'Roboto', sans-serif;    
+    padding: 0 .5rem;
+    font-weight: 400;
+    font-size: 2.15rem;
+    margin-top:-0.35rem;
+    opacity:0;
+    }
+
+.of{
+    // transform:translateY(-400%);
+    // transition:all .5s ease-in .3s;
+    color:$redfont
+}
+
+/*responsive nav bar*/
+@media screen and (max-width:1140px){
+    .hamburger{
+        display: block !important;
+    }
+    nav {
+        transform: translateY(-150%);
+    }
+
+    .heading{
+        padding-left: 0.5rem !important;
+    }
+    .join{
+        padding-left:1rem;
+    }
+
+    // .logo{
+    //     display:none !important;
+    // }
+    .murmurs{
+        animation: appear .85s cubic-bezier(1,-0.54, 0.64, 2.61) 0s ;
+    }
+    .of{
+            animation: appear .85s cubic-bezier(1,-0.54, 0.64, 2.61) .6s;
+        }
+    .monologues{
+            animation: appear .85s cubic-bezier(1,-0.54, 0.64, 2.61) 1.2s;
+        }
+}
+
+// @mixin backdrop {
+//     min-height: 60vh;
+//     background: url("../../public/Img/pexels-innermost-limits-3894157.jpg");
+//     background-size:cover;
+//     background-repeat: no-repeat;
+//     background-position:center; 
+// }
+
+// .overlay1{
+//     @include backdrop();
+//     position:absolute;
+//     width: 90vw;
+//     left: 0;
+//     bottom: 0;
+//     background-color:$fontbeige;
+//     background-blend-mode: lighten;
+//     opacity:1;
+// }
+// .overlay2{
+//     @include backdrop();
+//         position:absolute;
+//     width: 90vw;
+//     left:25vw;
+//     bottom: 30vh;
+//     background-color:$fontbeige;
+//     background-blend-mode: lighten;
+//     opacity:1;
+//     z-index:-2;
+// }
+@media screen and (max-width:462px){
+        .bottomHorizontal{
+    @include horizontal;
+    bottom: .5rem;
+    height: 3.5rem;  
+    z-index:3;
+}
+.heading-After{
+    nav{
+        margin-left:-4.5rem;
+    }
+    li{
+        padding:.6rem 0rem .1rem 2.5rem;
+        a{
+                    font-size:.9rem !important;
+        }
+    }
+}
 }

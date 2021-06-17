@@ -1,30 +1,31 @@
 @import'./colors';
 
-body{
-    background-color: $background1;
+body{    
+    font-family: 'Roboto', sans-serif;
+    background-color: $background1 !important;
     height: 100vh;
     position: relative;
     width: 100vw;
-    // cursor:none;
 }
 
+.indexBody{
+    cursor:none
+}
 
 .bottomWrap{
-    overflow: hidden;
-    margin-bottom: 3rem;
+    position:absolute;
+    top: 28vh;
+    right: 3%;
+    width: 73vw;
     display: flex;
-    flex-direction: column;
-    align-content:right ;
-    border: 1px black solid;
-    height:50vh;
-    text-align: right;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align:right;
 }
 
 
 @mixin backdrop {
-    position: absolute;
     min-height: 60vh;
-    width: 70vw;
     background: url("../../public/Img/pexels-innermost-limits-3894157.jpg");
     background-size:cover;
     background-repeat: no-repeat;
@@ -33,18 +34,59 @@ body{
 
 .overlay1{
     @include backdrop();
+    position:absolute;
     width: 90vw;
     left: 0;
     bottom: 0;
-    mix-blend-mode: lighten;
-    z-index: -1;
+    background-color:$fontbeige;
+    background-blend-mode: lighten;
+    opacity:1;
+}
+.overlay2{
+    @include backdrop();
+        position:absolute;
+    width: 90vw;
+    left:25vw;
+    bottom: 30vh;
+    background-color:$fontbeige;
+    background-blend-mode: lighten;
+    opacity:1;
+    z-index:-2;
 }
 
 .about{
     @include backdrop();
-    right: 5%;
-    top: 28vh;
     z-index: 1;
+    flex: 1 2 80%;
+}
+.createdBy{
+    flex: 0 1 1rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    color: $mailingList ;
+    font-size: .85em;
+    letter-spacing: .1rem;
+    justify-items: stretch;
+    height: 25rem;  
+    padding-left: .75rem;
+
+}
+
+.look{
+    letter-spacing: 0.35rem;
+    color: $mailingList;
+    flex:1 1 100%;
+    transition:all 2s ease;
+    right:10vw;
+    padding:.75rem 5rem 0 0;
+    overflow-wrap: wrap;
+    line-height: 2rem;
+    span{
+       position: absolute;
+       animation: divehover 2.2s cubic-bezier(0.43,-0.76, 0.69, 1.12) infinite;
+       padding-left: .5rem;
+       font-size: 1.2rem;
+}
 }
 
 .aboutButton{
@@ -55,16 +97,14 @@ body{
         max-width: 8rem;
         border: none;       
         text-transform: uppercase;
-        font-family: 'Roboto', sans-serif;
         font-weight: 700;
         font-size: 1.25rem;
         opacity: 0;
         z-index: 3;
         transition: all .12s ease;
         background-color: rgba(255, 255, 255, 0);
-        a{
             color:$redfont;
-        }
+
     }
  .aboutButton:hover{
         opacity: 1;
@@ -79,86 +119,90 @@ body{
     opacity: $opacity;
 }
 
-#flyLeft{
+.flyLeft{
     @include bird(70%,65%,10vw,6.5rem,33%)
 }
 
-#flyRight{
+.flyRight{
     @include bird(8%,30%,15vw,8rem,28%)
 }
 
-/*Cursor related*/
-@mixin cursorBasic {
-    background:#ffffff;
-    border-radius:50%;
-    position:absolute;
-    transform:translate(-50%, -50%);
-    pointer-events: none;
-    transition:all .3s ease-in;
-    transition-property: background,width,height,opacity ;
-    transform-origin: 100% 100%;
-    opacity: 40%;
-}
-.cursor{
-    @include cursorBasic();
-    width:5rem;
-    height:5rem;
-    z-index: 2;
-}
-
-.cursor-Dark{
-    @include cursorBasic();
-    animation: cursorGrow 5s ease-in-out infinite;
-    z-index: 6;
-}
-
-.cursor-After{
-    background-color: rgb(219, 219, 219) !important;
-    opacity: 50%;
-    height: 3rem;
-    width: 3rem;
-    z-index: 2;
-    transition:scale 5s ease-in;
-    transition-property: background,scale,opacity ;
-}
-
-
-.look{
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 0.35rem;
-    color: $mailingList;
-    position: absolute;
-    right: 13%;
-    width:100vw;
-    border: 1px black solid;
-    bottom: 7%;
-    transition:all 2s ease;
-}
-
-.dive{
-        animation: divehover 2.2s cubic-bezier(0.43,-0.76, 0.69, 1.12) infinite;
-        padding-left: .5rem;
-        font-size: 1.2rem;
-        position: absolute;
-}
 
 @keyframes divehover{
-    0%{transform:translateY(-9%);}
-    50%{transform:translateY(10%);}
-    100%{transform:translateY(-9%);}
+    0%{transform:translateY(-11%);}
+    50%{transform:translateY(13%);color:white;opacity:.4}
+    100%{transform:translateY(-11%);}
 }
-.createdBy{
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    color: $mailingList ;
-    font-size: .85em;
-    letter-spacing: .1rem;
-    position: absolute;
-    justify-items: stretch;
-    right:1.5%;
-    font-family: 'Roboto', sans-serif;
-    margin-top:-10.5%;
-    height: 25rem;
-    display: block;
-    align-self: baseline;
+
+// about
+
+.aboutContent{      
+    background-color: black;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    min-height:100vh;
+    width: 100vw;
+
+    p{
+        transition: all .2s ease-in-out;
+        padding: 0 auto;
+        margin-top: 0.5rem;
+        font-size: .9rem;
+        line-height: 1.5rem;
+        max-width:40rem;
+            width: 80vw;
+        padding:0.5rem .5rem;    
+    }        
+    h2{
+        padding:0 .5rem;
+                width: 80vw;
+        transition: all .2s ease-in-out;
+        align-self: left;
+        line-height:2rem;
+        margin-bottom: 0.75rem;
+        font-size: 2.2rem;
+        letter-spacing: .15rem;
+        max-width:40rem;
+  
+    } 
+    #reference{
+        font-size: .6rem;
+        padding-top: .5em;
+        padding-bottom: .5rem;
+        line-height: 1.65em;
+    }
+}
+
+#enter {
+    height: 6rem;
+    width: 6rem;
+    bottom: 1.5rem;
+    right: 10%;
+    margin-top: 1rem;
+    margin-right: 20%;
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    align-self: flex-end;
+    border:none;
+    border-radius: 50%;
+    background-color:$darkbeige;
+    z-index: 4;
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        color: $redfont;
+    }
+}
+
+#enter:hover{
+    cursor: default;
 }

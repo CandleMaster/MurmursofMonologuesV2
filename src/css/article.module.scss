@@ -1,0 +1,88 @@
+@import'./colors';
+
+
+.content{
+    width: 70vw;
+    margin:2rem auto; 
+    display: flex;
+    flex-direction: column ;
+    padding-bottom: 7rem;
+    margin-top: 7vh;
+    align-items: center;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif ;
+
+    
+    .articleTitle{
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.25rem;
+        padding: .5rem ;
+        width:65%;
+
+    }
+    .tags{
+        padding: 0.25rem;
+        font-size: 0.75rem;
+        font-weight:600;
+        color: $darkgrey;
+    }
+    .date{
+       padding: 0.15rem;
+       font-size: .75rem;
+       color: grey;
+    }
+    .socials{
+        padding: 1rem 0 .25rem 0;
+    }
+
+    .article{
+        padding: .5rem;
+        max-width: 50rem;
+        text-align: left;
+        font-size: 1.15rem;
+        font-family:'Georgia';
+        margin:1rem 0 3rem 0;
+        p{
+            line-height:2rem;
+        }
+    }
+
+    .emailform{
+        width: 100vw;
+       justify-content:left;
+       position: absolute;
+        left: 0px;
+        bottom: 0;
+        background-color: $fontbeige;
+        margin-bottom: .5rem;
+        label{
+            color: white;
+            text-align: left;
+            justify-self: left;
+         }
+         #submitEmail{
+             background-color: $fontbeige;
+             color: white;
+         }
+        }
+}
+
+p{
+    padding:.5rem 0;
+    line-height: 1.75rem;
+}
+
+@media screen and (max-width:968px){
+    .content,.articleTitle{
+        width:80vw  
+    }
+   
+}
+
+@media screen and (max-width:462px){
+    .content, .articleTitle{
+        width:95vw;
+        padding: 0;
+    }
+}
