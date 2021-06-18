@@ -6,7 +6,7 @@ import lodash from 'lodash'
 
 export default function NavBar(prop) {
 
-    const essaySeries = ["SHITS AND GIGGLES","GAMSAT","BOOK REVIEW"]
+    const essaySeries = ["SHITS AND GIGGLES","GAMSAT"]
     
     const [isMouseOver,setMouseOver] = useState(false)
     function handleMouseOver(){

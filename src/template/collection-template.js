@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Heading,Mailing,Panel } from "../components"
+import { Heading,Mailing,Panel, Seo } from "../components"
 import logoImg from "../../public/Img/MoMtitle.png"
 import * as styles from "../css/panel.module.scss"
 import '../css/global.scss'
@@ -9,10 +9,10 @@ export default function Recent({ data }) {
 
     return (
         <div>
-        {/* <Seo 
+        <Seo 
             title="Latest"
             description={`A blog on whatever I fancy, occasionally culture, technology, books, algorithms, Shanghai etc. This is the ${data.allMarkdownRemark.nodes[0].frontmatter.tags} series`}
-            /> */}
+            />
             <Heading 
                 logoAppear={(<div>
                     <div className='murmurs'>MURMURS</div>

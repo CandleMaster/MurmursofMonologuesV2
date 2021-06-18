@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Heading,Mailing,PoemBlock } from '../components'
+import { Heading,Mailing,PoemBlock, Seo } from '../components'
 import * as poemStyles from '../css/poem.module.scss'
 import { graphql } from 'gatsby'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -17,6 +17,10 @@ export default function Poem({data}) {
     const sm = useMediaQuery('(max-width:500px)')
     return (
         <div className={poemStyles.body}>
+                    <Seo 
+            title="Poems"
+            description="Poems inspired by my experience in biomedical research."
+            />
             <div className={poemStyles.vertical} />
             <Heading 
                 onPagePoemHead={{color:'#B4B0B0'}}

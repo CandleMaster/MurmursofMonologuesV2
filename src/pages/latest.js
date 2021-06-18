@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Mailing, Panel } from "../components"
+import { Heading, Mailing, Panel, Seo } from "../components"
 import * as styles from "../css/panel.module.scss"
 import '../css/global.scss'
 
@@ -9,10 +9,10 @@ export default function Latest({ data }) {
 
     return (
         <div>
-            {/* <Seo 
+            <Seo 
             title="Latest"
             description="The latest essays whatever I fancy, occasionally culture, technology, books, algorithms, Shanghai etc. "
-            /> */}
+            />
             <Heading 
                 logoAppear={(<div>
                     <div className='murmurs'>MURMURS</div>
