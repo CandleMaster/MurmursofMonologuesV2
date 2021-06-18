@@ -1,0 +1,32 @@
+/*Cursor related*/
+@mixin cursorBasic {
+    background:#ffffff;
+    border-radius:50%;
+    position:absolute;
+    transform:translate(-50%, -50%);
+    pointer-events: none;
+    transition:all .3s ease-in;
+    transition-property: background,width,height,opacity ;
+    transform-origin: 100% 100%;
+    opacity: 40%;
+}
+
+.cursor-Dark{
+    @include cursorBasic();
+    animation: cursorGrow 5s ease-in-out infinite;
+    z-index: 6;
+}
+
+@keyframes cursorGrow{
+    0%{
+        transform: scale(1.3,1.3);
+        opacity: 50%;}
+    50%{
+        transform: scale(1.5,1.5);
+        opacity: 30%;}
+    100%{
+        transform: scale(1.3,1.3);
+        opacity: 50%;}
+}
+
+

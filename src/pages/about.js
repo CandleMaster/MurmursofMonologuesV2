@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby'
 import * as styles from '../css/index.module.scss'
-
+import * as aboutStyles from "../css/about.module.scss"
 export default function About() {
     return (
         <div className={styles.aboutContent}>

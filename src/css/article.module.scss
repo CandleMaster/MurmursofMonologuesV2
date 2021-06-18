@@ -3,15 +3,13 @@
 
 .content{
     width: 70vw;
-    margin:2rem auto; 
+    margin:5vh auto; 
     display: flex;
     flex-direction: column ;
     padding-bottom: 7rem;
-    margin-top: 5vh;
     align-items: center;
     text-align: center;
     font-family: 'Open Sans', sans-serif ;
-
     
     .articleTitle{
         font-size: 2rem;
@@ -19,19 +17,21 @@
         line-height: 2.25rem;
         padding: .5rem ;
         width:65%;
-
     }
+
     .tags{
         padding: 0.35rem;
         font-size: 0.75rem;
         font-weight:600;
         color: $darkgrey;
     }
+
     .date{
        padding: 0.15rem;
        font-size: .75rem;
        color: grey;
     }
+
     .socials{
         padding: 1rem 0 0rem 0;
     }
@@ -42,16 +42,18 @@
         text-align: left;
         font-size: 1.15rem;
         font-family:'Georgia';
-        margin:1rem 0 3rem 0;
+        
         p{
-            line-height:2rem;
+
+            padding:.5rem 0;
+    line-height: 1.75rem;
         }
         h3{
             padding:2rem 0 1rem 0;
             font-size:1.2rem;
         }
         h4{
-                        padding:1rem 0 1rem 0;
+            padding:1rem 0 1rem 0;
             font-size:1.1rem;
         }
     }
@@ -76,10 +78,7 @@
         }
 }
 
-p{
-    padding:.5rem 0;
-    line-height: 1.75rem;
-}
+
 
 @media screen and (max-width:968px){
     .content,.articleTitle{
@@ -89,8 +88,14 @@ p{
 }
 
 @media screen and (max-width:462px){
-    .content, .articleTitle{
-        width:96vw;
-        padding: 0;
+     .content{
+        width:95vw  
+    }
+    .articleTitle{
+        width:100%;
+    }
+    p{
+        padding:1.5rem 0;
+        margin: 0 auto;
     }
 }

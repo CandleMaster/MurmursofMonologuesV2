@@ -11,6 +11,7 @@ export default function Heading({ children, horizontalHead, logoHidden, logoAppe
         display:'none',
         cursor:'default'
     }
+    
   const matches = useMediaQuery('(max-width:1140px)');
 
     return (
