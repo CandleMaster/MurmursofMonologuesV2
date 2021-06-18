@@ -55,12 +55,12 @@ module.exports = {
       name: `poems`,
       path: `${__dirname}/src/poems/`,
     }},
-    {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      name: `images`,
-      path: `${__dirname}/src/images/`,
-    },
-  },
+    // {
+    // resolve: `gatsby-source-filesystem`,
+    // options: {
+    //   name: `images`,
+    //   path: `${__dirname}/src/images/`,
+    // },
+  // },
       ],
 }

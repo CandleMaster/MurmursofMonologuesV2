@@ -22,10 +22,10 @@ export default function blogTemplate({ data }) {
 
     return (
         <div style={templateStyle}>
-        <Seo  
+        {/* <Seo  
           title={title}
           description={description}
-          />
+          /> */}
             <Heading  
               logoAppear={(<div>
                   <div className='murmurs'>MURMURS</div>
