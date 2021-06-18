@@ -25,7 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
      data.allMarkdownRemark.nodes.forEach(node => {
         actions.createPage({
-            path:'/collection/' + _.kebabCase(node.frontmatter.tags),
+            path:'/' + _.kebabCase(node.frontmatter.tags),
             component: path.resolve('./src/template/collection-template.js'),
             context:{tags: node.frontmatter.tags}
         })
