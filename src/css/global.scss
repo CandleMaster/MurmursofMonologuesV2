@@ -70,7 +70,7 @@ body{
     justify-content: flex-end;
     font-family: 'Roboto', sans-serif;
     flex-wrap: nowrap;
-    overflow: hidden;
+    overflow: hidden !important;
     z-index: 3;
     ul a{
         font-size: 1.35rem;
