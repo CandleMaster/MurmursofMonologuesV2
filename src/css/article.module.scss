@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column ;
     padding-bottom: 7rem;
-    margin-top: 7vh;
+    margin-top: 5vh;
     align-items: center;
     text-align: center;
     font-family: 'Open Sans', sans-serif ;
@@ -22,7 +22,7 @@
 
     }
     .tags{
-        padding: 0.25rem;
+        padding: 0.35rem;
         font-size: 0.75rem;
         font-weight:600;
         color: $darkgrey;
@@ -33,11 +33,11 @@
        color: grey;
     }
     .socials{
-        padding: 1rem 0 .25rem 0;
+        padding: 1rem 0 0rem 0;
     }
 
     .article{
-        padding: .5rem;
+        padding: .25rem;
         max-width: 50rem;
         text-align: left;
         font-size: 1.15rem;
@@ -45,6 +45,14 @@
         margin:1rem 0 3rem 0;
         p{
             line-height:2rem;
+        }
+        h3{
+            padding:2rem 0 1rem 0;
+            font-size:1.2rem;
+        }
+        h4{
+                        padding:1rem 0 1rem 0;
+            font-size:1.1rem;
         }
     }
 
@@ -82,7 +90,7 @@ p{
 
 @media screen and (max-width:462px){
     .content, .articleTitle{
-        width:95vw;
+        width:96vw;
         padding: 0;
     }
 }

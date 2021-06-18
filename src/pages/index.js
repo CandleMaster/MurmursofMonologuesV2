@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Heading from "../components/Heading"
-import Ocean from '../components/Ocean'
-import Seo from '../components/SEO'
+import { Heading, Ocean, Seo, Cursor } from "../components"
 import * as styles from "../css/index.module.scss"
+import * as cursorStyles from '../css/cursor.module.scss'
 import "../css/global.scss"
 import { Link } from 'gatsby';
-import Cursor from "../components/Cursor"
-import * as cursorStyles from '../css/cursor.module.scss'
 
 export default function Home() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -26,7 +23,7 @@ function handleMouseEffectOut(){
   return (    
     <div className={styles.indexBody}>   
         <Seo 
-            title="home page"
+            title="Home"
             description="A blog on whatever I fancy, occasionally culture, technology, books, algorithms, Shanghai etc. "
             />
       <Cursor 

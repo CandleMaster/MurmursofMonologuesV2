@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Heading from '../../components/Heading'
-import Mailing from '../../components/Mailing'
-import PoemBlock from './PoemBlock'
-import * as poemStyles from '../../css/poem.module.scss'
+import { Heading,Mailing,PoemBlock } from '../components'
+import * as poemStyles from '../css/poem.module.scss'
 import { graphql } from 'gatsby'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
@@ -37,7 +35,7 @@ export default function Poem({data}) {
                         />
                             <div className={poemStyles.poemWrap} >
                                 <div id={poemStyles.rat} >
-                                    {sm? <img style={{transform:`translateX(${offsetY*-.2}px)`}} src="Img/rats.png" alt="" />:<img style={{transform:`translateX(${offsetY*-.8}px)`}} src="Img/rats.png" alt="" />}
+                                    {sm? <img style={{transform:`translateX(${offsetY*-.2}px)`}} src="Img/rats2.png" alt="" />:<img style={{transform:`translateX(${offsetY*-.8}px)`}} src="Img/rats2.png" alt="" />}
                                 
                                 </div>
                                 <PoemBlock 

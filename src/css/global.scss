@@ -237,12 +237,12 @@ li:hover{
     padding:.15rem 0 0 .3rem;
     border:none;
     background-color: white;
-    z-index:4;
+    z-index:10;
     flex:0 1 2.5rem;
     align-self:flex-start;
         :hover{
-            background-color:red;
-            cursor:move !important;
+            color:red !important;
+            cursor:pointer !important;
         }
 }
  

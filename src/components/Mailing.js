@@ -11,7 +11,7 @@ const [message, setResult] = useState("")
     setResult(prop => "Thank you for supporting me!:)")
   
   }
-
+handleSubmit().catch(e=>{console.log('An error occursed with MailChimp')})
   const [email,setEmail] = useState("")
   function handleChange(e)  {
     const newValue = e.target.value;
@@ -21,9 +21,9 @@ const [message, setResult] = useState("")
     return (
       <div className='bottomHorizontal' style={position}>
         <form className="join" onSubmit={handleSubmit}>
-              <label className="mailingLabel" style={fontColor} for="email">JOIN MAILING LIST</label>
+              <label className="mailingLabel" style={fontColor} for="email" >JOIN MAILING LIST</label>
               <input onChange={handleChange} nameName="email" id="email" value={email} required />
-              <input type="submit" value="+" id="submitEmail" style={position} />
+              <input type="submit" value="+" id="submitEmail" style={position}/>
               <div className="error">{message}</div>
         </form>
       </div>

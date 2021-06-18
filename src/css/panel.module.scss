@@ -1,4 +1,4 @@
-@import '../../../css/colors';
+@import './colors';
 body {
     background-color:$fontbeige !important;
     // cursor:default;
@@ -73,7 +73,8 @@ body {
                 width: 100vw;
     }
     .rectangle:hover{
-        background-color: rgba(218, 218, 218, 0.5);    
+        background-color: $panelPurple;
+        opacity: .8;    
     }
 }
 

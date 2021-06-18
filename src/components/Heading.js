@@ -13,10 +13,6 @@ export default function Heading({ children, horizontalHead, logoHidden, logoAppe
     }
   const matches = useMediaQuery('(max-width:1140px)');
 
-const logoStyle ={
-    display:'none !important'
-}
-
     return (
     <div>    
         <div className="overlay1" />

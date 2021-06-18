@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import NavLi from "./NavLi"
-import { useState } from 'react'
 import { Link } from 'gatsby';
 import lodash from 'lodash'
+
+
 export default function NavBar(prop) {
 
-    const essaySeries = ["SHITS AND GIGGLES","SHANGHAI SHENANEGANS","BOOK REVIEW"]
+    const essaySeries = ["SHITS AND GIGGLES","GAMSAT","BOOK REVIEW"]
     
     const [isMouseOver,setMouseOver] = useState(false)
     function handleMouseOver(){
@@ -17,7 +18,7 @@ export default function NavBar(prop) {
 
     return (
         <nav className={prop.isBeige ? "navBeige" : "navWhite"} style={prop.navStyle}>   
-            <ul><Link to="/latest" style={prop.onPageLatest} >LATEST</Link></ul>
+            <ul><Link to="/latest" style={prop.onPageLatest}>LATEST</Link></ul>
             <ul><Link to="/" style={prop.onPageAbout} >ABOUT</Link></ul>
             <ul><Link to="/poem" style={prop.onPagePoem}>POEMS</Link></ul>
             <ul onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}> <Link to="/latest" style={prop.onPageEssay}>ESSAY
