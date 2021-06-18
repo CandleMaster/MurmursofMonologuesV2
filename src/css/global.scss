@@ -336,6 +336,9 @@ li:hover{
 //     z-index:-2;
 // }
 @media screen and (max-width:462px){
+    body{
+        width:100vw;
+    }
         .bottomHorizontal{
     @include horizontal;
     bottom: .5rem;
