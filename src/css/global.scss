@@ -198,7 +198,6 @@ li:hover{
 
 @keyframes appear{
     from{opacity:0}
-
     to{opacity:1}
 }
 
@@ -213,7 +212,6 @@ li:hover{
     padding-left:4rem;
     width: 100vw;
     display: flex;
-
     font-family: 'Roboto', sans-serif;
     align-content:center;
     z-index: 3;
@@ -271,8 +269,6 @@ li:hover{
     }
 
 .of{
-    // transform:translateY(-400%);
-    // transition:all .5s ease-in .3s;
     color:$redfont
 }
 
@@ -292,9 +288,6 @@ li:hover{
         padding-left:1rem;
     }
 
-    // .logo{
-    //     display:none !important;
-    // }
     .murmurs{
         animation: appear .85s cubic-bezier(1,-0.54, 0.64, 2.61) 0s ;
     }
@@ -306,54 +299,26 @@ li:hover{
         }
 }
 
-// @mixin backdrop {
-//     min-height: 60vh;
-//     background: url("../../public/Img/pexels-innermost-limits-3894157.jpg");
-//     background-size:cover;
-//     background-repeat: no-repeat;
-//     background-position:center; 
-// }
-
-// .overlay1{
-//     @include backdrop();
-//     position:absolute;
-//     width: 90vw;
-//     left: 0;
-//     bottom: 0;
-//     background-color:$fontbeige;
-//     background-blend-mode: lighten;
-//     opacity:1;
-// }
-// .overlay2{
-//     @include backdrop();
-//         position:absolute;
-//     width: 90vw;
-//     left:25vw;
-//     bottom: 30vh;
-//     background-color:$fontbeige;
-//     background-blend-mode: lighten;
-//     opacity:1;
-//     z-index:-2;
-// }
 @media screen and (max-width:462px){
     body{
         width:100vw !important;
     }
-        .bottomHorizontal{
+
+    .bottomHorizontal{
     @include horizontal;
     bottom: .5rem;
     height: 3.5rem;  
     z-index:3;
 }
-.heading-After{
-    nav{
-        margin-left:-4.5rem;
-    }
-    li{
-        padding:.6rem 0rem .1rem 2.5rem;
-        a{
-                    font-size:.9rem !important;
+    .heading-After{
+        nav{
+            margin-left:-4.5rem;
         }
-    }
+        li{
+            padding:.6rem 0rem .1rem 2.5rem;
+            a{
+                        font-size:.9rem !important;
+            }
+        }
 }
 }
