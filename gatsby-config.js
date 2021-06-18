@@ -9,6 +9,7 @@ module.exports = {
     title:"Murmurs of Monologues",
     description:"A blog on culture, technology and topics I fancy.",
     author:"Danni Jiang"
+    
   },
   plugins: [
     `gatsby-plugin-sass`,
