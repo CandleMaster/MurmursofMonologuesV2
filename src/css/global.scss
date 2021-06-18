@@ -337,7 +337,7 @@ li:hover{
 // }
 @media screen and (max-width:462px){
     body{
-        width:100vw;
+        width:100vw !important;
     }
         .bottomHorizontal{
     @include horizontal;
