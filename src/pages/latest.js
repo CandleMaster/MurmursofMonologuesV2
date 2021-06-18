@@ -8,7 +8,7 @@ import {graphql} from "gatsby"
 export default function Latest({ data }) {
 
     return (
-        <div>
+        <div className="wrapper">
             <Seo 
             title="Latest"
             description="The latest essays whatever I fancy, occasionally culture, technology, books, algorithms, Shanghai etc. "

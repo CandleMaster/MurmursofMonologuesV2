@@ -17,6 +17,7 @@ export default function Poem({data}) {
     const sm = useMediaQuery('(max-width:500px)')
     return (
         <div className={poemStyles.body}>
+
                     <Seo 
             title="Poems"
             description="Poems inspired by my experience in biomedical research."
