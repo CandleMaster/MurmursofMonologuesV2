@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Heading, Ocean, Seo, Cursor } from "../components"
+import { Heading, Ocean, Cursor } from "../components"
 import * as styles from "../css/index.module.scss"
 import * as cursorStyles from '../css/cursor.module.scss'
 import "../css/global.scss"
@@ -22,10 +22,10 @@ function handleMouseEffectOut(){
 }
   return (    
     <div className={styles.indexBody}>   
-        <Seo 
+        {/* <Seo 
             title="Home"
             description="A blog on whatever I fancy, occasionally culture, technology, books, algorithms, Shanghai etc. "
-            />
+            /> */}
       <Cursor 
         cursorClass={mouseEffects? cursorStyles.cursor2 : cursorStyles.cursor1} 
         xPosition={position.x} 

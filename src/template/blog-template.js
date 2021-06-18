@@ -1,8 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Heading from '../components/Heading'
-import Mailing from '../components/Mailing'
-import Seo from '../components/SEO'
+import { Heading, Mailing } from '../components'
+// import Seo from '../components/SEO'
 import * as articleStyles from '../css/article.module.scss'
 import  '../css/global.scss'
 
