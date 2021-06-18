@@ -3,9 +3,10 @@
 body{    
     font-family: 'Roboto', sans-serif;
     background-color: $background1 !important;
+    overflow-x:hidden !important;
     height: 100vh;
-    position: relative;
     width: 100vw;
+    position: relative;
 }
 
 .indexBody{
