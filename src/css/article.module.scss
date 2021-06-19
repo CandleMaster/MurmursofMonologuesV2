@@ -44,9 +44,8 @@
         font-family:'Georgia';
         
         p{
-
             padding:.5rem 0;
-    line-height: 2rem;
+        line-height: 2rem;
         }
         h3{
             padding:2rem 0 1rem 0;
@@ -89,13 +88,16 @@
 
 @media screen and (max-width:462px){
      .content{
-        width:95vw  
+        width:90vw  
     }
-    .articleTitle{
+    .articleTitle, .articleTitle{
         width:100%;
     }
-    p{
-        padding:1.5rem 0;
+    .content p{
+        padding:1.5rem 0rem;
+        width:100% !important;
         margin: 0 auto;
     }
+
+    
 }
